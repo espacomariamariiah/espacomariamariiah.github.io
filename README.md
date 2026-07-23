@@ -1,7 +1,11 @@
-# Site — Clínica de Estética (protótipo)
+# Site — Espaço Maria Mariah (protótipo)
 
-Protótipo de site institucional com chat de FAQ usando um LLM open source (Llama 3.3,
-via Groq). Feito para mostrar à clínica antes de fechar o design/conteúdo definitivo.
+Protótipo de site institucional para o Espaço Beleza e Bem Estar Maria Mariah LTDA
+(CNPJ 58.531.764/0001-93), com chat de FAQ usando um LLM open source (Llama 3.3, via
+Groq). Feito para mostrar ao espaço antes de fechar o design/conteúdo definitivo.
+
+Paleta e tipografia foram baseadas na logo real (`assets/logo.jpg`, extraída do
+Instagram @espacomariamariiah) e no material de divulgação enviado.
 
 ## Estrutura
 
@@ -17,17 +21,28 @@ via Groq). Feito para mostrar à clínica antes de fechar o design/conteúdo def
     └── .dev.vars.example
 ```
 
-## O que é placeholder (trocar depois)
+## O que já é real vs. o que falta preencher
 
-Todo o conteúdo abaixo é fictício e precisa ser substituído assim que os materiais
-do Instagram chegarem:
+Já usamos dados reais: nome do espaço, CNPJ, logo, Instagram (@espacomariamariiah) e o
+menu completo de procedimentos (tanto no site quanto na base de conhecimento do chat).
 
-- **Nome/logo da clínica**: `index.html` (nav e footer) — atualmente "Essência Estética"
-- **Textos de "Sobre", serviços, depoimentos**: `index.html`
-- **Fotos**: seção "Sobre" (`.sobre__image`), galeria "Antes & Depois" (`.galeria`) —
-  hoje são caixas tracejadas com texto, trocar por `<img>` reais na pasta `assets/`
-- **Endereço, telefone, WhatsApp, Instagram**: seção `#contato` em `index.html`
-- **Base de conhecimento do chat (FAQ real)**: `worker/src/index.js`, constante `CLINIC_FAQ`
+Ainda faltam (marcados como `[placeholder]` no código):
+
+- **Nome da fundadora/CEO**: `index.html`, seção `.fundadora` — só sabemos que ela
+  aparece na foto de divulgação enviada; não inventamos o nome
+- **Foto da fundadora e fotos do espaço**: em alta resolução (a foto do material do
+  Instagram que vimos é uma miniatura de baixa qualidade com uma promoção antiga —
+  não dá pra usar no site definitivo)
+- **Endereço completo, telefone/WhatsApp e horário de funcionamento**: seção
+  `#contato` em `index.html` e também em `worker/src/index.js` (`CLINIC_FAQ`)
+- **Depoimentos reais** de clientes: `index.html`, seção `#depoimentos`
+- **Fotos de antes/depois e posts do Instagram**: `.galeria` e `.instagram__grid`
+  em `index.html` — hoje são caixas tracejadas, trocar por `<img>` reais
+
+Uma observação: você passou a Razão Social/Nome Fantasia como "Maria Mariah" em um
+lugar e "Maria Maria" em outro (sem o H) — usei "Maria Mariah" em todo o site, que é
+o que aparece no Instagram e no menu de procedimentos. Confirma se está certo antes
+de publicar oficialmente.
 
 ## Rodar localmente
 
@@ -102,8 +117,10 @@ republicar o front-end automaticamente.
 
 ## Próximos passos
 
-- [ ] Enviar fotos, textos e identidade visual (cores, logo) do Instagram da clínica
-- [ ] Preencher o FAQ real em `worker/src/index.js` (serviços, preços, políticas)
-- [ ] Trocar endereço/telefone/Instagram reais
-- [ ] Validar o protótipo com a clínica antes de divulgar o link publicamente
+- [ ] Confirmar nome da fundadora/CEO e conseguir foto dela em alta resolução
+- [ ] Enviar fotos do espaço, de antes/depois e posts para a galeria/Instagram
+- [ ] Preencher endereço, telefone/WhatsApp e horário (site + `CLINIC_FAQ` no worker)
+- [ ] Preencher preços no FAQ do chat, se quiserem que o bot responda sobre valores
+- [ ] Coletar depoimentos reais de clientes
+- [ ] Validar o protótipo com o espaço antes de divulgar o link publicamente
 - [ ] Ativar rate limiting no worker se o link for compartilhado publicamente

@@ -43,7 +43,7 @@ function addMessage(role, text) {
 
 function addWelcomeMessage() {
   if (chatMessages.children.length === 0) {
-    addMessage("assistant", "Olá! 👋 Sou a assistente virtual da Essência Estética. Posso te ajudar com horários, tratamentos, preços e dúvidas gerais. Como posso ajudar?");
+    addMessage("assistant", "Olá! 👋 Sou a assistente virtual do Espaço Maria Mariah. Posso te ajudar com serviços, horários e dúvidas gerais. Como posso ajudar?");
   }
 }
 
