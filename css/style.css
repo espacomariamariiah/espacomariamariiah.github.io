@@ -124,6 +124,7 @@ a { color: inherit; text-decoration: none; }
 }
 .nav__links {
   display: flex;
+  align-items: center;
   gap: 2rem;
   font-size: 0.9rem;
 }
@@ -364,8 +365,8 @@ a { color: inherit; text-decoration: none; }
 .contato__form button { align-self: flex-start; }
 .form__nota { font-size: 0.75rem; color: var(--brown-500); }
 
+.mapa__titulo { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-top: 3rem; margin-bottom: 1.5rem; }
 .mapa {
-  margin-top: 3rem;
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
