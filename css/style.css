@@ -295,21 +295,21 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.9rem;
 }
 
-/* ===================== Depoimentos ===================== */
-.depoimentos { background: var(--cream-100); }
-.depoimentos__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-}
-.depoimento {
+/* ===================== Avaliações (Google) ===================== */
+.avaliacoes { background: var(--cream-100); }
+.avaliacoes__card {
+  max-width: 420px;
+  margin: 0 auto;
+  text-align: center;
   background: var(--paper);
   border-radius: var(--radius);
-  padding: 2rem;
+  padding: 2.5rem 2rem;
   box-shadow: var(--shadow);
 }
-.depoimento p { font-style: italic; color: var(--brown-900); margin-bottom: 1rem; }
-.depoimento cite { color: var(--brown-700); font-size: 0.9rem; font-style: normal; }
+.avaliacoes__estrelas { color: var(--brown-700); font-size: 1.8rem; letter-spacing: 0.2rem; margin-bottom: 0.75rem; }
+.avaliacoes__nota { font-family: var(--font-display); font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem; }
+.avaliacoes__nota span { font-family: var(--font-body); font-size: 1rem; font-weight: 400; color: var(--brown-500); }
+.avaliacoes__legenda { color: var(--brown-500); font-size: 0.9rem; margin-bottom: 1.5rem; }
 
 /* ===================== Instagram ===================== */
 .instagram { text-align: center; }

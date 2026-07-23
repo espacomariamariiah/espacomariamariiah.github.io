@@ -45,7 +45,14 @@ Ainda faltam (marcados como `[placeholder]` no código):
   `<a ...><img src="assets/instagram/post1.jpg" alt="..."></a>`
 - **Horário de funcionamento**: seção `#contato` em `index.html` e em
   `worker/src/index.js` (`CLINIC_FAQ`)
-- **Depoimentos reais** de clientes: `index.html`, seção `#depoimentos`
+- **Depoimentos individuais** (texto de avaliações reais): hoje a seção `#avaliacoes`
+  mostra a nota agregada real do Google (5,0 · 6 avaliações, puxada do perfil no
+  Google Maps), mas não o texto de cada avaliação — o Google não deixa isso ser
+  extraído automaticamente sem API paga. Se quiser mostrar 2-3 avaliações com o
+  texto, me manda o conteúdo (copiar/colar do Google) que eu coloco como cards
+- **A nota "5,0 · 6 avaliações" é estática** (puxei do Google Maps em 23/07/2026) —
+  não atualiza sozinha. Dá pra virar automático depois com a Google Places API
+  (precisa de conta/billing no Google Cloud) se fizer sentido
 - **Fotos de antes/depois**: `.galeria` em `index.html` — hoje são caixas tracejadas,
   trocar por `<img>` reais
 
@@ -134,15 +141,13 @@ Pages republicar o front-end automaticamente.
 - [ ] Enviar fotos do espaço, de antes/depois e dos 6 posts do Instagram
 - [ ] Preencher horário de funcionamento (site + `CLINIC_FAQ` no worker)
 - [ ] Preencher preços no FAQ do chat, se quiserem que o bot responda sobre valores
-- [ ] Coletar depoimentos reais de clientes
+- [ ] Mandar o texto de 2-3 avaliações reais do Google pra virarem cards de depoimento
 - [ ] Confirmar se `@mariamariahcampinas` (do flyer) é o mesmo perfil ou outro
 - [ ] Validar o protótipo com o espaço antes de divulgar o link publicamente
 - [ ] Ativar rate limiting no worker se o link for compartilhado publicamente
 
 ## Ideias para captar mais clientes (ainda não implementadas)
 
-- **Avaliações do Google**: embutir nota/reviews do Google Meu Negócio assim que o
-  perfil tiver avaliações suficientes — gera confiança imediata
 - **Agendamento online de verdade**: hoje o formulário só demonstra a UI; dá pra
   integrar com Google Calendar, Simplybook ou similar para agendar de fato
 - **Pixel do Meta / Google Analytics**: para anunciar no Instagram/Facebook com
