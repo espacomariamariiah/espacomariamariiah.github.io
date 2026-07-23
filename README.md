@@ -23,8 +23,9 @@ Instagram @espacomariamariiah) e no material de divulgação enviado.
 
 ## O que já é real vs. o que falta preencher
 
-Já usamos dados reais: nome do espaço, CNPJ, logo, Instagram (@espacomariamariiah) e o
-menu completo de procedimentos (tanto no site quanto na base de conhecimento do chat).
+Já usamos dados reais: nome do espaço, CNPJ, logo, Instagram (@espacomariamariiah),
+endereço, WhatsApp (19 99572-6903), mapa do Google, vagas abertas ("Trabalhe conosco")
+e o menu completo de procedimentos (site + base de conhecimento do chat).
 
 Ainda faltam (marcados como `[placeholder]` no código):
 
@@ -33,16 +34,28 @@ Ainda faltam (marcados como `[placeholder]` no código):
 - **Foto da fundadora e fotos do espaço**: em alta resolução (a foto do material do
   Instagram que vimos é uma miniatura de baixa qualidade com uma promoção antiga —
   não dá pra usar no site definitivo)
-- **Endereço completo, telefone/WhatsApp e horário de funcionamento**: seção
-  `#contato` em `index.html` e também em `worker/src/index.js` (`CLINIC_FAQ`)
+- **Imagem da vaga (post "Trabalhe conosco")**: `index.html`, seção `.trabalhe__imagem`
+  — você mandou o flyer no chat, mas eu não consigo salvar imagens coladas na
+  conversa; me manda como arquivo (ou o link do post) que eu coloco
+- **Fotos reais para "Nosso Instagram"** (6 posts): `.instagram__grid` em `index.html`
+  — hoje são placeholders que linkam pro perfil. O Instagram não deixa puxar "os
+  posts mais recentes" automaticamente sem login/API; o jeito mais simples é: salvar
+  as imagens dos posts que você quer mostrar em `assets/instagram/post1.jpg` (até
+  `post6.jpg`) e trocar cada `<a class="instagram__item">...</a>` por
+  `<a ...><img src="assets/instagram/post1.jpg" alt="..."></a>`
+- **Horário de funcionamento**: seção `#contato` em `index.html` e em
+  `worker/src/index.js` (`CLINIC_FAQ`)
 - **Depoimentos reais** de clientes: `index.html`, seção `#depoimentos`
-- **Fotos de antes/depois e posts do Instagram**: `.galeria` e `.instagram__grid`
-  em `index.html` — hoje são caixas tracejadas, trocar por `<img>` reais
+- **Fotos de antes/depois**: `.galeria` em `index.html` — hoje são caixas tracejadas,
+  trocar por `<img>` reais
 
-Uma observação: você passou a Razão Social/Nome Fantasia como "Maria Mariah" em um
-lugar e "Maria Maria" em outro (sem o H) — usei "Maria Mariah" em todo o site, que é
-o que aparece no Instagram e no menu de procedimentos. Confirma se está certo antes
-de publicar oficialmente.
+Observações:
+- Você passou a Razão Social/Nome Fantasia como "Maria Mariah" em um lugar e "Maria
+  Maria" em outro (sem o H) — usei "Maria Mariah" em todo o site, que é o que aparece
+  no Instagram e no menu de procedimentos. Confirma se está certo antes de publicar.
+- O flyer de vagas mostra o Instagram como `@mariamariahcampinas`, diferente do
+  perfil que você confirmou (`@espacomariamariiah`) — usei o perfil confirmado em
+  todos os links; verifica se `@mariamariahcampinas` é um perfil antigo/diferente.
 
 ## Rodar localmente
 
@@ -117,9 +130,24 @@ Pages republicar o front-end automaticamente.
 ## Próximos passos
 
 - [ ] Confirmar nome da fundadora/CEO e conseguir foto dela em alta resolução
-- [ ] Enviar fotos do espaço, de antes/depois e posts para a galeria/Instagram
-- [ ] Preencher endereço, telefone/WhatsApp e horário (site + `CLINIC_FAQ` no worker)
+- [ ] Mandar a imagem do post de vagas ("Trabalhe conosco") como arquivo
+- [ ] Enviar fotos do espaço, de antes/depois e dos 6 posts do Instagram
+- [ ] Preencher horário de funcionamento (site + `CLINIC_FAQ` no worker)
 - [ ] Preencher preços no FAQ do chat, se quiserem que o bot responda sobre valores
 - [ ] Coletar depoimentos reais de clientes
+- [ ] Confirmar se `@mariamariahcampinas` (do flyer) é o mesmo perfil ou outro
 - [ ] Validar o protótipo com o espaço antes de divulgar o link publicamente
 - [ ] Ativar rate limiting no worker se o link for compartilhado publicamente
+
+## Ideias para captar mais clientes (ainda não implementadas)
+
+- **Avaliações do Google**: embutir nota/reviews do Google Meu Negócio assim que o
+  perfil tiver avaliações suficientes — gera confiança imediata
+- **Agendamento online de verdade**: hoje o formulário só demonstra a UI; dá pra
+  integrar com Google Calendar, Simplybook ou similar para agendar de fato
+- **Pixel do Meta / Google Analytics**: para anunciar no Instagram/Facebook com
+  remarketing — requer criar as contas e me passar os IDs
+- **Cupom de primeira visita**: um pop-up ou banner com desconto para quem agenda
+  pelo site, incentivo comum em clínicas de estética
+- **Catálogo do WhatsApp Business**: cadastrar os serviços como produtos no
+  WhatsApp Business para aparecer direto na conversa

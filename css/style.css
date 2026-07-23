@@ -18,7 +18,7 @@
   --font-body: 'Jost', sans-serif;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: var(--font-body);
@@ -26,6 +26,7 @@ body {
   background: var(--paper);
   line-height: 1.6;
   font-weight: 300;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 { font-family: var(--font-display); font-weight: 600; color: var(--brown-900); }
@@ -127,6 +128,15 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.9rem;
 }
 .nav__links a:hover { color: var(--brown-700); }
+.nav__links a.nav__work {
+  border: 1px solid var(--brown-700);
+  color: var(--brown-700);
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.nav__links a.nav__work:hover { background: var(--brown-700); color: #fff; }
 .nav__burger {
   display: none;
   flex-direction: column;
@@ -151,7 +161,7 @@ a { color: inherit; text-decoration: none; }
     linear-gradient(180deg, var(--cream-100), var(--paper));
   position: relative;
 }
-.hero__content { max-width: 720px; }
+.hero__content { max-width: 720px; min-width: 0; }
 .hero__eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.3em;
@@ -160,8 +170,8 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 1.5rem;
 }
 .hero h1 {
-  font-size: clamp(2.4rem, 5vw, 4.2rem);
-  line-height: 1.08;
+  font-size: clamp(1.9rem, 8vw, 4.2rem);
+  line-height: 1.15;
   margin-bottom: 1.25rem;
 }
 .hero h1 em {
@@ -305,7 +315,7 @@ a { color: inherit; text-decoration: none; }
 .instagram { text-align: center; }
 .instagram__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-top: 2rem;
 }
@@ -317,7 +327,9 @@ a { color: inherit; text-decoration: none; }
   display: flex; align-items: center; justify-content: center;
   color: var(--brown-700);
   font-size: 0.85rem;
+  transition: transform 0.2s ease;
 }
+.instagram__item:hover { transform: translateY(-3px); }
 
 /* ===================== Contato ===================== */
 .contato { background: var(--cream-100); }
@@ -352,6 +364,46 @@ a { color: inherit; text-decoration: none; }
 .contato__form button { align-self: flex-start; }
 .form__nota { font-size: 0.75rem; color: var(--brown-500); }
 
+.mapa {
+  margin-top: 3rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(61, 43, 31, 0.1);
+}
+.mapa iframe { width: 100%; height: 340px; border: 0; display: block; }
+
+/* ===================== Trabalhe Conosco ===================== */
+.trabalhe { background: var(--blush-100); }
+.trabalhe__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.trabalhe__imagem {
+  aspect-ratio: 4/5;
+  border-radius: var(--radius);
+  background: var(--cream-100);
+  border: 1px dashed var(--brown-300);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--brown-700);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1rem;
+}
+.trabalhe__text h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 1rem; }
+.trabalhe__text > p { color: var(--brown-700); margin-bottom: 1.5rem; }
+.trabalhe__vagas { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 2rem; }
+.trabalhe__vagas li {
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--brown-900);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+.trabalhe__vagas li::before { content: '✦'; position: absolute; left: 0; color: var(--brown-700); }
+
 /* ===================== Footer ===================== */
 .footer { padding: 2.5rem 0; border-top: 1px solid rgba(61, 43, 31, 0.1); background: var(--paper); }
 .footer__inner {
@@ -363,6 +415,36 @@ a { color: inherit; text-decoration: none; }
   color: var(--brown-500);
 }
 .footer__legal { max-width: 480px; }
+
+/* ===================== WhatsApp flutuante ===================== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 200;
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.7rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease;
+}
+.whatsapp-float:hover { transform: translateY(-3px); }
+
+/* ===================== Barra fixa mobile ===================== */
+.mobile-cta {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 150;
+  background: var(--paper);
+  border-top: 1px solid rgba(61, 43, 31, 0.1);
+  padding: 0.75rem 1.25rem;
+  box-shadow: 0 -6px 20px rgba(61, 43, 31, 0.08);
+}
+.mobile-cta .btn { width: 100%; text-align: center; }
 
 /* ===================== Chat Widget ===================== */
 .chat-widget {
@@ -476,9 +558,14 @@ a { color: inherit; text-decoration: none; }
     gap: 1rem;
     box-shadow: var(--shadow);
   }
-  .sobre__grid, .contato__grid { grid-template-columns: 1fr; }
-  .sobre__image { order: -1; }
+  .sobre__grid, .contato__grid, .trabalhe__grid { grid-template-columns: 1fr; }
+  .sobre__image, .trabalhe__imagem { order: -1; }
   .galeria, .instagram__grid { grid-template-columns: repeat(2, 1fr); }
   .section { padding: 4rem 0; }
   .fundadora { flex-direction: column; text-align: center; }
+  .mobile-cta { display: block; }
+  body { padding-bottom: 70px; }
+  .whatsapp-float { bottom: 5.5rem; }
+  .chat-widget { bottom: 5.5rem; }
 }
+
