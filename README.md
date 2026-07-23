@@ -74,8 +74,12 @@ npx serve .
 python3 -m http.server 8080
 ```
 
-O chat só vai funcionar de verdade depois que o worker estiver publicado (passo abaixo);
-antes disso ele mostra a mensagem de erro amigável.
+O chat já funciona de verdade no site publicado (`https://espacomariamariiah.github.io/`).
+Rodando localmente (`localhost`) o chat não vai responder, porque o worker só aceita
+chamadas vindas do domínio publicado (`ALLOWED_ORIGIN` em `worker/wrangler.toml`) —
+isso é proposital, pra ninguém além do site usar sua conta da Groq. Pra testar o chat
+localmente, troque `ALLOWED_ORIGIN` para `"*"` temporariamente, rode
+`npx wrangler deploy` na pasta `worker/`, teste, e depois volte pro domínio real.
 
 ## Publicar o site (GitHub Pages — organization page)
 
@@ -93,37 +97,26 @@ A cada `git push` na branch `main`, o GitHub Pages republica automaticamente.
 
 ## Publicar o chat (Cloudflare Worker + Groq)
 
-1. Crie uma conta gratuita em https://console.groq.com e gere uma API key
-   (Settings → API Keys)
-2. Instale as dependências do worker:
-   ```bash
-   cd worker
-   npm install
-   ```
-3. Login no Cloudflare (abre o navegador):
-   ```bash
-   npx wrangler login
-   ```
-4. Configure a API key como secret (não fica no código nem no git):
-   ```bash
-   npx wrangler secret put GROQ_API_KEY
-   # cole a key quando pedir
-   ```
-5. Publique o worker:
-   ```bash
-   npx wrangler deploy
-   ```
-   Isso retorna uma URL tipo `https://clinica-estetica-chat.SEU-USUARIO.workers.dev`
-6. Edite `js/main.js` e troque `CHAT_ENDPOINT` pela URL acima + `/chat`, ex:
-   ```js
-   const CHAT_ENDPOINT = "https://clinica-estetica-chat.SEU-USUARIO.workers.dev/chat";
-   ```
-7. Depois que o site estiver no ar (passo anterior), edite `worker/wrangler.toml` e
-   troque `ALLOWED_ORIGIN = "*"` por `https://espacomariamariiah.github.io`, para que
-   só o site do espaço consiga chamar o worker. Rode `npx wrangler deploy` de novo.
+**Status: já publicado e funcionando.** O worker `clinica-estetica-chat` está no ar em
+`https://clinica-estetica-chat.cmdias.workers.dev`, com a `GROQ_API_KEY` configurada
+como secret (não está no código/git) e o CORS restrito a
+`https://espacomariamariiah.github.io`. O `js/main.js` já aponta pra essa URL.
 
-Commite e dê push nas mudanças (`js/main.js` e `worker/wrangler.toml`) para o GitHub
-Pages republicar o front-end automaticamente.
+Para mexer nisso no futuro (trocar a key, mudar o modelo, redeployar após editar
+`worker/src/index.js`):
+
+```bash
+cd worker
+npm install          # se ainda não tiver feito
+npx wrangler login   # login no Cloudflare (conta cmdias@outlook.com.br)
+npx wrangler secret put GROQ_API_KEY   # só se precisar trocar a key
+npx wrangler deploy   # publica qualquer alteração no worker
+```
+
+Se editar `worker/src/index.js` (por exemplo, pra atualizar o `CLINIC_FAQ` com preços
+ou horário de funcionamento), rode `npx wrangler deploy` de novo pra aplicar.
+Não precisa mexer em `js/main.js` nem `worker/wrangler.toml` de novo, a menos que troque
+o domínio do site ou o nome do worker.
 
 ### Sobre custo e limites
 
@@ -145,6 +138,8 @@ Pages republicar o front-end automaticamente.
 - [ ] Confirmar se `@mariamariahcampinas` (do flyer) é o mesmo perfil ou outro
 - [ ] Validar o protótipo com o espaço antes de divulgar o link publicamente
 - [ ] Ativar rate limiting no worker se o link for compartilhado publicamente
+- [ ] Considerar gerar uma nova API key na Groq e substituir a atual (a key foi colada
+  em texto no chat pra eu configurar — não é um risco grave, mas trocar é boa prática)
 
 ## Ideias para captar mais clientes (ainda não implementadas)
 
