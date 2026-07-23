@@ -11,6 +11,7 @@ Instagram @espacomariamariiah) e no material de divulgação enviado.
 
 ```
 ├── index.html          # site (uma página só, com âncoras)
+├── equipe.html          # página "Conheça nossa equipe"
 ├── css/style.css
 ├── js/main.js           # inclui a lógica do widget de chat
 ├── assets/              # fotos da clínica (adicionar depois)
@@ -30,6 +31,10 @@ reais do Google e o menu completo de procedimentos (site + base de conhecimento 
 
 Ainda faltam (marcados como `[placeholder]` no código):
 
+- **Resto da equipe** (`equipe.html`): só tem a Juliane (fundadora) até agora, porque é
+  a única profissional com nome, foto e função confirmados. Pra cada outra pessoa,
+  preciso de: foto, nome completo e função/serviço que ela faz — me manda isso que eu
+  crio o card dela (com botão de agendar já configurado com o WhatsApp)
 - **Fotos reais para "Nosso Instagram"** (6 posts): `.instagram__grid` em `index.html`
   — hoje são placeholders que linkam pro perfil. O Instagram não deixa puxar "os
   posts mais recentes" automaticamente sem login/API; o jeito mais simples é: salvar

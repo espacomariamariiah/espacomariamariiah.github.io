@@ -247,6 +247,7 @@ a { color: inherit; text-decoration: none; }
 }
 .fundadora__texto strong { display: block; font-family: var(--font-display); font-size: 1.1rem; }
 .fundadora__texto span { font-size: 0.85rem; color: var(--brown-500); }
+.sobre__equipe-btn { display: inline-block; margin-top: 1.5rem; }
 
 /* ===================== Serviços ===================== */
 .servicos { background: var(--cream-100); }
@@ -577,3 +578,37 @@ a { color: inherit; text-decoration: none; }
   .chat-widget { bottom: 5.5rem; }
 }
 
+
+/* ===================== Página Equipe ===================== */
+.equipe-hero { padding-top: 9rem; padding-bottom: 2rem; }
+.equipe-grid-section { padding-top: 0; }
+.equipe__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.75rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.equipe-card {
+  background: var(--paper);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.equipe-card__foto {
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  margin: 0 auto 1.25rem;
+}
+.equipe-card h3 { font-size: 1.25rem; margin-bottom: 0.35rem; }
+.equipe-card__funcao { color: var(--brown-500); font-size: 0.9rem; margin-bottom: 1.5rem; }
+.equipe__nota {
+  max-width: 480px;
+  margin: 3rem auto 0;
+  color: var(--brown-500);
+  font-size: 0.9rem;
+}
+.equipe__nota a { color: var(--brown-700); text-decoration: underline; }
