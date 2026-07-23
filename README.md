@@ -43,8 +43,6 @@ Ainda faltam (marcados como `[placeholder]` no código):
   as imagens dos posts que você quer mostrar em `assets/instagram/post1.jpg` (até
   `post6.jpg`) e trocar cada `<a class="instagram__item">...</a>` por
   `<a ...><img src="assets/instagram/post1.jpg" alt="..."></a>`
-- **Horário de funcionamento**: seção `#contato` em `index.html` e em
-  `worker/src/index.js` (`CLINIC_FAQ`)
 - **Depoimentos individuais** (texto de avaliações reais): hoje a seção `#avaliacoes`
   mostra a nota agregada real do Google (5,0 · 6 avaliações, puxada do perfil no
   Google Maps), mas não o texto de cada avaliação — o Google não deixa isso ser
@@ -132,7 +130,6 @@ o domínio do site ou o nome do worker.
 - [ ] Confirmar nome da fundadora/CEO e conseguir foto dela em alta resolução
 - [ ] Mandar a imagem do post de vagas ("Trabalhe conosco") como arquivo
 - [ ] Enviar fotos do espaço, de antes/depois e dos 6 posts do Instagram
-- [ ] Preencher horário de funcionamento (site + `CLINIC_FAQ` no worker)
 - [ ] Preencher preços no FAQ do chat, se quiserem que o bot responda sobre valores
 - [ ] Mandar o texto de 2-3 avaliações reais do Google pra virarem cards de depoimento
 - [ ] Confirmar se `@mariamariahcampinas` (do flyer) é o mesmo perfil ou outro

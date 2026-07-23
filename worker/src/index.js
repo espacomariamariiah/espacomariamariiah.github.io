@@ -12,7 +12,7 @@ oriente a pessoa a confirmar pelo WhatsApp, sem inventar dados.
 
 Informações do espaço:
 - Endereço: R. Dr. Buarque de Macedo, 639 — Jardim Guanabara, Campinas/SP
-- Horário de funcionamento: [placeholder — adicionar horário]
+- Horário de funcionamento: terça a sábado, das 9h às 18h. Segunda e domingo fechado.
 - WhatsApp: (19) 99572-6903
 - Instagram: @espacomariamariiah
 - E-mail: mariamariahcampinas@gmail.com
