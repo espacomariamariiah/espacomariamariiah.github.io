@@ -15,6 +15,7 @@ Informações do espaço:
 - Horário de funcionamento: [placeholder — adicionar horário]
 - WhatsApp: (19) 99572-6903
 - Instagram: @espacomariamariiah
+- E-mail: mariamariahcampinas@gmail.com
 
 Vagas de trabalho abertas no momento: manicure, cabeleireiro(a), podólogo(a) e
 depiladora. Interessados devem chamar no WhatsApp.
