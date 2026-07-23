@@ -1,8 +1,5 @@
 // ===================== Config =====================
-// Depois de publicar o Cloudflare Worker (ver worker/README dentro da pasta worker),
-// troque a URL abaixo pela URL real do worker, ex:
-// "https://clinica-chat.SEU-USUARIO.workers.dev/chat"
-const CHAT_ENDPOINT = "https://SEU-WORKER.workers.dev/chat";
+const CHAT_ENDPOINT = "https://clinica-estetica-chat.cmdias.workers.dev/chat";
 
 // ===================== Ano no rodapé =====================
 document.getElementById("ano").textContent = new Date().getFullYear();
