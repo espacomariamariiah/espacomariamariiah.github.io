@@ -40,7 +40,7 @@ function addMessage(role, text) {
 
 function addWelcomeMessage() {
   if (chatMessages.children.length === 0) {
-    addMessage("assistant", "Olá! 👋 Sou a assistente virtual do Espaço Maria Mariah. Posso te ajudar com serviços, horários e dúvidas gerais. Como posso ajudar?");
+    addMessage("assistant", "Olá! 👋 Sou a assistente virtual do Espaço Maria Mariá. Posso te ajudar com serviços, horários e dúvidas gerais. Como posso ajudar?");
   }
 }
 

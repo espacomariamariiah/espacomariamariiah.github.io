@@ -2,9 +2,9 @@
 // A API key da Groq fica só aqui (como secret), nunca no front-end.
 
 // ATENÇÃO: os itens marcados como [placeholder] ainda precisam ser preenchidos
-// com os dados reais do Espaço Maria Mariah (horário de funcionamento, preços).
+// com os dados reais do Espaço Maria Mariá (horário de funcionamento, preços).
 const CLINIC_FAQ = `
-Você é a assistente virtual do Espaço Maria Mariah (Espaço Beleza e Bem Estar Maria
+Você é a assistente virtual do Espaço Maria Mariá (Espaço Beleza e Bem Estar Maria
 Mariah LTDA), um espaço de beleza e bem-estar. Instagram: @espacomariamariiah.
 Responda de forma simpática, breve e objetiva (2-4 frases), em português do Brasil.
 Se não souber uma informação específica (preço exato, disponibilidade de horário, etc.),
