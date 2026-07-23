@@ -428,8 +428,8 @@ a { color: inherit; text-decoration: none; }
 /* ===================== WhatsApp flutuante ===================== */
 .whatsapp-float {
   position: fixed;
-  bottom: 1.5rem;
-  left: 1.5rem;
+  bottom: 6.25rem;
+  right: 1.5rem;
   z-index: 200;
   width: 60px; height: 60px;
   border-radius: 50%;
@@ -574,7 +574,7 @@ a { color: inherit; text-decoration: none; }
   .fundadora { flex-direction: column; text-align: center; }
   .mobile-cta { display: block; }
   body { padding-bottom: 70px; }
-  .whatsapp-float { bottom: 5.5rem; }
+  .whatsapp-float { bottom: 10.25rem; }
   .chat-widget { bottom: 5.5rem; }
 }
 
