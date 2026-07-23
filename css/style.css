@@ -247,7 +247,7 @@ a { color: inherit; text-decoration: none; }
 }
 .fundadora__texto strong { display: block; font-family: var(--font-display); font-size: 1.1rem; }
 .fundadora__texto span { font-size: 0.85rem; color: var(--brown-500); }
-.sobre__equipe-btn { display: inline-block; margin-top: 1.5rem; }
+.sobre__equipe-btn { display: block; width: fit-content; margin: 1.5rem auto 0; }
 
 /* ===================== Serviços ===================== */
 .servicos { background: var(--cream-100); }
@@ -595,9 +595,13 @@ a { color: inherit; text-decoration: none; }
   padding: 2rem;
   text-align: center;
   box-shadow: var(--shadow);
+  max-width: 560px;
+  margin: 0 auto;
 }
 .equipe-card__foto {
-  width: 140px; height: 140px;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1;
   border-radius: 50%;
   object-fit: cover;
   object-position: top center;
@@ -605,6 +609,12 @@ a { color: inherit; text-decoration: none; }
 }
 .equipe-card h3 { font-size: 1.25rem; margin-bottom: 0.35rem; }
 .equipe-card__funcao { color: var(--brown-500); font-size: 0.9rem; margin-bottom: 1.5rem; }
+.equipe-card__agendar {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--brown-700);
+}
+.equipe-card__agendar:hover { color: var(--brown-900); }
 .equipe__nota {
   max-width: 480px;
   margin: 3rem auto 0;
