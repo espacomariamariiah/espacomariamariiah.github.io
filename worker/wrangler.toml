@@ -2,8 +2,8 @@ name = "clinica-estetica-chat"
 main = "src/index.js"
 compatibility_date = "2024-11-01"
 
-# Troque "*" pelo domínio real do site assim que ele estiver publicado, ex:
-# "https://clinica-estetica-site.pages.dev"
+# Troque "*" pelo domínio real do site assim que ele estiver publicado no GitHub Pages:
+# "https://espacomariamariiah.github.io"
 [vars]
 ALLOWED_ORIGIN = "*"
 

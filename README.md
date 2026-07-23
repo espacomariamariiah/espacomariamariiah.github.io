@@ -57,20 +57,19 @@ python3 -m http.server 8080
 O chat só vai funcionar de verdade depois que o worker estiver publicado (passo abaixo);
 antes disso ele mostra a mensagem de erro amigável.
 
-## Publicar o site (Cloudflare Pages — gratuito)
+## Publicar o site (GitHub Pages — organization page)
 
-Como o GitHub Pages da sua conta já está em uso pelo portfólio, o site fica no
-**Cloudflare Pages** (conta gratuita, sem limite de projetos, e já usamos Cloudflare
-para o worker do chat também — tudo no mesmo painel).
+O repositório vive em uma organization própria do espaço no GitHub
+(`espacomariamariiah`, separada da conta pessoal `cmdiasbr`), em um repo com o nome
+especial `espacomariamariiah.github.io` — isso faz o GitHub publicar o site na raiz
+do domínio, sem subpasta: **https://espacomariamariiah.github.io/**
 
-1. Crie uma conta gratuita em https://dash.cloudflare.com/sign-up (se ainda não tiver)
-2. No dashboard: **Workers & Pages → Create → Pages → Connect to Git**
-3. Selecione o repositório `clinica-estetica-site` no GitHub (autorize o acesso quando pedido)
-4. Configuração de build: **nenhuma** (é site estático) — deixe "Build command" vazio e
-   "Build output directory" como `/`
-5. Deploy. Você recebe uma URL tipo `https://clinica-estetica-site.pages.dev`
+1. No GitHub, abra o repositório → **Settings → Pages**
+2. Em "Build and deployment" → **Source**, selecione **Deploy from a branch**
+3. Em "Branch", escolha **main** e a pasta **/ (root)** → **Save**
+4. Aguarde 1-2 minutos e acesse `https://espacomariamariiah.github.io/`
 
-A cada `git push`, o Cloudflare Pages publica automaticamente a nova versão.
+A cada `git push` na branch `main`, o GitHub Pages republica automaticamente.
 
 ## Publicar o chat (Cloudflare Worker + Groq)
 
@@ -100,11 +99,11 @@ A cada `git push`, o Cloudflare Pages publica automaticamente a nova versão.
    const CHAT_ENDPOINT = "https://clinica-estetica-chat.SEU-USUARIO.workers.dev/chat";
    ```
 7. Depois que o site estiver no ar (passo anterior), edite `worker/wrangler.toml` e
-   troque `ALLOWED_ORIGIN = "*"` pela URL real do site (ex: a URL do Pages), para que
-   só o seu site consiga chamar o worker. Rode `npx wrangler deploy` de novo.
+   troque `ALLOWED_ORIGIN = "*"` por `https://espacomariamariiah.github.io`, para que
+   só o site do espaço consiga chamar o worker. Rode `npx wrangler deploy` de novo.
 
-Commite e dê push nas mudanças (`js/main.js` e `worker/wrangler.toml`) para o Pages
-republicar o front-end automaticamente.
+Commite e dê push nas mudanças (`js/main.js` e `worker/wrangler.toml`) para o GitHub
+Pages republicar o front-end automaticamente.
 
 ### Sobre custo e limites
 
